@@ -1,0 +1,8 @@
+{
+    "require-dev": {
+        "kint-php/kint": "^3.3"
+    },
+    "require": {
+        "nesbot/carbon": "2.29.1 as 1.39.0"
+    }
+}
