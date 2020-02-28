@@ -1,6 +1,7 @@
 <?php
 
 namespace MovingDigital;
+use Carbon\Carbon;
 
 /**
  * The admin-specific functionality of the plugin.
