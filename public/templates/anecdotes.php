@@ -20,20 +20,24 @@
             <i class="fa fa-plus"></i> <span class="hidden-xs">Toevoegen</span>
         </a>
     </div>
-    <ul class="anecdotes">
-		<?php foreach ( $anecdotes as $anecdote ) : ?>
-            <li class="anecdote">
+	<?php if ($anecdotes) : ?>
+        <ul class="anecdotes">
+			<?php foreach ( $anecdotes as $anecdote ) : ?>
+                <li class="anecdote">
                 <span class="passportImage">
                     <img alt="Anecdote Friend" src="<?php echo $anecdote->user->image; ?>">
                 </span>
-                <span class="text">
+                    <span class="text">
                     <q class="quote"><?php echo $anecdote->text; ?></q>
                     <span class="name"><?php echo $anecdote->user->name; ?></span>
                     <span class="options">
                         <a class="btn btn-default" href="<?php echo $viral_details->urls->anecdote; ?>" target="_blank" tabindex="0"><i class="fa  fa-external-link"></i></a>
                     </span>
                 </span>
-            </li>
-		<?php endforeach; ?>
-    </ul>
+                </li>
+			<?php endforeach; ?>
+        </ul>
+	<?php else : ?>
+        <p class="no-anecdotes">Er zijn nog geen ervaringen van vrienden bekend.</p>
+	<?php endif; ?>
 </div>

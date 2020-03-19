@@ -13,33 +13,35 @@
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
-<?php if ($features) : ?>
 <div class="helpmee-widget helpmee-widget-features">
-	<div class="header">
-		<h3 class="title pull-left">Kenmerken door vrienden</h3>
-		<a href="<?php echo $viral_details->urls->feature; ?>" class="btn btn-primary pull-right" target="_blank" tabindex="0"><i class="fa fa-plus"></i> <span class="hidden-xs">Toevoegen</span></a>
-	</div>
-	<ul class="features">
-		<?php foreach ($features as $feature) : ?>
-			<li class="feature">
-				<div class="name">
-					<?php echo $feature->text; ?>
-					<a href="<?php echo $viral_details->urls->feature; ?>" class="add" target="_blank" tabindex="0"><i class="fa fa-plus"></i></a>
-				</div>
-				<div class="endorsers">
-					<div class="count">
-						<?php echo count($feature->endorsements); ?>
-					</div>
+    <div class="header">
+        <h3 class="title pull-left">Kenmerken door vrienden</h3>
+        <a href="<?php echo $viral_details->urls->feature; ?>" class="btn btn-primary pull-right" target="_blank" tabindex="0"><i class="fa fa-plus"></i> <span class="hidden-xs">Toevoegen</span></a>
+    </div>
+	<?php if ($features) : ?>
+        <ul class="features">
+			<?php foreach ($features as $feature) : ?>
+                <li class="feature">
+                    <div class="name">
+						<?php echo $feature->text; ?>
+                        <a href="<?php echo $viral_details->urls->feature; ?>" class="add" target="_blank" tabindex="0"><i class="fa fa-plus"></i></a>
+                    </div>
+                    <div class="endorsers">
+                        <div class="count">
+							<?php echo count($feature->endorsements); ?>
+                        </div>
 
-					<span class="endorserImage passportImage">
-	                                                    <img alt="Endorser" src="<?php echo $feature->user->image; ?>">
-	                                                </span>
-					<a class="more" href="<?php echo $viral_details->urls->feature; ?>" tabindex="0">
-						<i class="fa fa-chevron-right"></i>
-					</a>
-				</div>
-			</li>
-		<?php endforeach; ?>
-	</ul>
+                        <span class="endorserImage passportImage">
+		                                                    <img alt="Endorser" src="<?php echo $feature->user->image; ?>">
+		                                                </span>
+                        <a class="more" href="<?php echo $viral_details->urls->feature; ?>" tabindex="0">
+                            <i class="fa fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </li>
+			<?php endforeach; ?>
+        </ul>
+	<?php else : ?>
+        <p class="no-features">Er zijn nog geen kenmerken toegevoegd.</p>
+	<?php endif; ?>
 </div>
-<?php endif; ?>

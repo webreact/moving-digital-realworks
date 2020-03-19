@@ -255,7 +255,7 @@ class Moving_Digital_Realworks_Admin {
 		$exists_in_theme = locate_template( $theme_files, false );
 		$template       = ( $exists_in_theme != '' ) ? $exists_in_theme : $template ;
 
-		if ( $responseBody->data ) {
+		if ( $viral_details ) {
 
 			$anecdotes = $responseBody->data;
 			ob_start();
@@ -286,7 +286,7 @@ class Moving_Digital_Realworks_Admin {
 		$exists_in_theme = locate_template( $theme_files, false );
 		$template       = ( $exists_in_theme != '' ) ? $exists_in_theme : $template ;
 
-		if ( $responseBody->data ) {
+		if ( $viral_details ) {
 
 			$features = $responseBody->data;
 			ob_start();
