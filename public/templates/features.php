@@ -17,7 +17,7 @@ use Carbon\Carbon;
 <?php if ($features) : ?>
 <div class="helpmee-widget helpmee-widget-features">
 	<div class="header">
-		<h2 class="title pull-left">Kenmerken door vrienden</h2>
+		<h3 class="title pull-left">Kenmerken door vrienden</h3>
 		<a href="<?php echo $viral_details->urls->feature; ?>" class="btn btn-primary pull-right" target="_blank" tabindex="0"><i class="fa fa-plus"></i> <span class="hidden-xs">Toevoegen</span></a>
 	</div>
 	<ul class="features">
