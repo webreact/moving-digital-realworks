@@ -18,8 +18,9 @@ This plugin connects your WordPress website to Moving Digitals API. It's intende
 
 1. Upload `moving-digital-realworks.php` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. For Anecdotes call this function in your templates and pass the Realworks object ID as parameter <?php echo MovingDigital\Moving_Digital_Realworks_Admin::moving_digital_get_anecdotes('OBJECT_ID'); ?>
-4. Templates can be overridden in your theme or child-theme. In the root of your (child)theme you can create a directory with the name 'moving-digital-realworks' and place the template files there. The original files are located in /public/templates/.
+3. For Anecdotes call this function in your templates and pass the Realworks object code as parameter <?php echo MovingDigital\Moving_Digital_Realworks_Admin::moving_digital_get_anecdotes('OBJECT_CODE'); ?>
+4. For Features call this function in your templates and pass the Realworks object code as parameter <?php echo MovingDigital\Moving_Digital_Realworks_Admin::moving_digital_get_features('OBJECT_CODE'); ?>
+5. Templates can be overridden in your theme or child-theme. In the root of your (child)theme you can create a directory with the name 'moving-digital-realworks' and place the template files there. The original files are located in /public/templates/.
 
 == Frequently Asked Questions ==
 
