@@ -237,10 +237,14 @@ class Moving_Digital_Realworks_Admin {
 
 	/**
 	 * @param $realworksId
-	 *
-	 * @return false|string
-	 */
+*
+* @return false|string
+*/
 	public function moving_digital_get_anecdotes( $realworksId ) {
+
+		$viral_details_url = 'viral-detail/?type=realworks&id=' . $realworksId;
+		$viral_details_result = Moving_Digital_Realworks_Admin::moving_digital_api_get( $viral_details_url );
+		$viral_details = json_decode( $viral_details_result['body'] );
 
 		$request        = 'anecdote/?type=realworks&id=' . $realworksId;
 		$result         = Moving_Digital_Realworks_Admin::moving_digital_api_get( $request );
@@ -256,7 +260,7 @@ class Moving_Digital_Realworks_Admin {
 			$anecdotes = $responseBody->data;
 			ob_start();
 
-				include $template;
+			include $template;
 
 			return ob_get_clean();
 		}
@@ -269,7 +273,11 @@ class Moving_Digital_Realworks_Admin {
 	 */
 	public function moving_digital_get_features( $realworksId ) {
 
-		$request        = 'feature/?type=realworks&id=' . $realworksId;
+		$viral_details_url = 'viral-detail/?type=realworks&id=' . $realworksId;
+		$viral_details_result = Moving_Digital_Realworks_Admin::moving_digital_api_get( $viral_details_url );
+		$viral_details = json_decode( $viral_details_result['body'] );
+
+	    $request        = 'feature/?type=realworks&id=' . $realworksId;
 		$result         = Moving_Digital_Realworks_Admin::moving_digital_api_get( $request );
 		$responseBody   = json_decode( $result['body'] );
 
@@ -281,7 +289,6 @@ class Moving_Digital_Realworks_Admin {
 		if ( $responseBody->data ) {
 
 			$features = $responseBody->data;
-			d($features);
 			ob_start();
 
 			include $template;

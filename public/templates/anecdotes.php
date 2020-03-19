@@ -14,23 +14,28 @@ use Carbon\Carbon;
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
-<div class="card">
-    <div class="card-header">Anecdotes</div>
-    <?php
-    $counter = 0;
-    foreach ( $anecdotes as $anecdote ) :
-    $carbonDate = Carbon::parse($anecdote->createdat)->setTimezone('Europe/Amsterdam');
-    Carbon::setLocale('nl');
-    if ($counter >= 1) {
-	    echo '<div class="card-body border-top">';
-    } else {
-	    echo '<div class="card-body">';
-    }
-    ?>
-        <h5 class="card-title"> <img class="anecdote-image" src="<?php echo $anecdote->user->image; ?>"><?php echo $anecdote->user->name; ?></h5>
-        <p class="card-text"><i>"<?php echo $anecdote->text; ?>"</i></p>
-        <p class="card-text"><small class="text-muted"><?php echo $carbonDate->diffForHumans(); ?></small></p>
+<div class="helpmee-widget helpmee-widget-friends">
+    <div class="header">
+        <h3 class="title pull-left">Vrienden aan het woord</h3>
+        <a href="<?php echo $viral_details->urls->anecdote; ?>" class="btn btn-primary pull-right" target="_blank" tabindex="0">
+            <i class="fa fa-plus"></i> <span class="hidden-xs">Toevoegen</span>
+        </a>
     </div>
-<?php $counter++; ?>
-<?php endforeach; ?>
+    <ul class="anecdotes">
+		<?php foreach ( $anecdotes as $anecdote ) : ?>
+			<?php $carbonDate = Carbon::parse($anecdote->createdat)->setTimezone('Europe/Amsterdam'); ?>
+            <li class="anecdote">
+                <span class="passportImage">
+                    <img alt="Anecdote Friend" src="<?php echo $anecdote->user->image; ?>">
+                </span>
+                <span class="text">
+                    <q class="quote"><?php echo $anecdote->text; ?></q>
+                    <span class="name"><?php echo $anecdote->user->name; ?></span>
+                    <span class="options">
+                        <a class="btn btn-default" href="<?php echo $viral_details->urls->anecdote; ?>" target="_blank" tabindex="0"><i class="fa  fa-external-link"></i></a>
+                    </span>
+                </span>
+            </li>
+		<?php endforeach; ?>
+    </ul>
 </div>
