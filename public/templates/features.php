@@ -1,5 +1,4 @@
 <?php
-use Carbon\Carbon;
 /**
  * Provide a public-facing view for the plugin
  *

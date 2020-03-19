@@ -1,5 +1,4 @@
 <?php
-use Carbon\Carbon;
 /**
  * Provide a public-facing view for the plugin
  *
@@ -23,7 +22,6 @@ use Carbon\Carbon;
     </div>
     <ul class="anecdotes">
 		<?php foreach ( $anecdotes as $anecdote ) : ?>
-			<?php $carbonDate = Carbon::parse($anecdote->createdat)->setTimezone('Europe/Amsterdam'); ?>
             <li class="anecdote">
                 <span class="passportImage">
                     <img alt="Anecdote Friend" src="<?php echo $anecdote->user->image; ?>">
