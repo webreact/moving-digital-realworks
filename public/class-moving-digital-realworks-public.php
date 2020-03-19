@@ -72,7 +72,6 @@ class Moving_Digital_Realworks_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		wp_enqueue_style('bootstrap4', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/moving-digital-realworks-public.css', array(), $this->version, 'all' );
 
 	}

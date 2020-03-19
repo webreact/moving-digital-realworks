@@ -247,11 +247,9 @@ class Moving_Digital_Realworks_Admin {
 		$responseBody   = json_decode( $result['body'] );
 
 		$template       = PLUGIN_DIR_PATH . '/public/templates/anecdotes.php';
-		$theme_files    = array( 'digital-movement-realworks/anecdotes.php' );
+		$theme_files    = array( 'moving-digital-realworks/anecdotes.php' );
 		$exists_in_theme = locate_template( $theme_files, false );
 		$template       = ( $exists_in_theme != '' ) ? $exists_in_theme : $template ;
-
-		d( $responseBody );
 
 		if ( $responseBody->data ) {
 
@@ -259,6 +257,34 @@ class Moving_Digital_Realworks_Admin {
 			ob_start();
 
 				include $template;
+
+			return ob_get_clean();
+		}
+	}
+
+	/**
+	 * @param $realworksId
+	 *
+	 * @return false|string
+	 */
+	public function moving_digital_get_features( $realworksId ) {
+
+		$request        = 'feature/?type=realworks&id=' . $realworksId;
+		$result         = Moving_Digital_Realworks_Admin::moving_digital_api_get( $request );
+		$responseBody   = json_decode( $result['body'] );
+
+		$template       = PLUGIN_DIR_PATH . '/public/templates/features.php';
+		$theme_files    = array( 'moving-digital-realworks/features.php' );
+		$exists_in_theme = locate_template( $theme_files, false );
+		$template       = ( $exists_in_theme != '' ) ? $exists_in_theme : $template ;
+
+		if ( $responseBody->data ) {
+
+			$features = $responseBody->data;
+			d($features);
+			ob_start();
+
+			include $template;
 
 			return ob_get_clean();
 		}

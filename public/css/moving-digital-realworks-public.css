@@ -2,20 +2,3 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
-
-.card .card-body .card-title .anecdote-image {
-    max-width: 5%;
-    display: initial;
-    margin-right: 16px;
-}
-
-.card .card-body .card-title {
-    margin-top: 0px;
-    margin-bottom: 4px;
-    font-size: 1.8rem;
-}
-
-.card .card-body .card-text {
-    font-size: 1.7rem;
-    margin-bottom: 0px;
-}
