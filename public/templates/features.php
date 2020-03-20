@@ -15,7 +15,7 @@
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 <div class="helpmee-widget helpmee-widget-features">
     <div class="header">
-        <h3 class="title pull-left">Kenmerken door vrienden</h3>
+        <h3 class="title pull-left">Kenmerken van bewoner(s) en vrienden</h3>
         <a href="<?php echo $viral_details->urls->feature; ?>" class="btn btn-primary pull-right" target="_blank" tabindex="0"><i class="fa fa-plus"></i> <span class="hidden-xs">Toevoegen</span></a>
     </div>
 	<?php if ($features) : ?>
