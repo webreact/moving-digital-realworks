@@ -315,7 +315,7 @@ class Moving_Digital_Realworks_Admin {
 			$apiKeyName    => $apiKey,
 		);
 
-		$url     = 'https://api.helpmee.nl/public/v1.4/' . $request;
+		$url     = 'https://app.diorama.nl/api/public/v1.4/' . $request;
 		$request = new \WP_Http;
 
 		return $request->request( $url, array( 'method' => 'GET', 'headers' => $headers ) );

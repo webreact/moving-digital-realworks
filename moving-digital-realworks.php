@@ -16,7 +16,7 @@
  * Plugin Name:       Moving Digital - Realworks
  * Plugin URI:        https://www.webreact.nl
  * Description:       This plugin connects your WordPress website to Moving Digitals API. It's intended use is to pull data in from Realworks objects.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Webreact (Nils Ringersma)
  * Author URI:        https://www.webreact.nl
  * License:           GPL-2.0+
@@ -40,7 +40,7 @@ require __DIR__ . '/vendor/autoload.php';
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'MOVING_DIGITAL_REALWORKS_VERSION', '1.0.0' );
+define( 'MOVING_DIGITAL_REALWORKS_VERSION', '1.0.1' );
 define( 'PLUGIN_DIR_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
