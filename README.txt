@@ -30,5 +30,8 @@ Although this plugin connects your WordPress website to Moving Digital it still 
 
 == Changelog ==
 
+= 1.0.1 =
+* API url changed
+
 = 1.0 =
 * Inital release
